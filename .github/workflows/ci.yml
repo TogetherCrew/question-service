@@ -37,12 +37,12 @@ jobs:
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test
-        run: coverage lcov app/*.py
+        run: coverage run -m pytest
       - uses: paambaati/codeclimate-action@v9.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: echo "Upload coverage" # lcov -o coverage.lcov # run -m pytest app
+          coverageCommand: coverage lcov
           coverageLocations: ${{github.workspace}}/*.lcov:lcov
 
   build-push:
