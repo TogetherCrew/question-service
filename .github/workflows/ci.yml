@@ -43,7 +43,7 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: coverage report # lcov -o coverage.lcov # run -m pytest app
-          coverageLocations: ${{github.workspace}}/*.lcov:lcov
+          # coverageLocations: ${{github.workspace}}/*.lcov:lcov
 
   build-push:
     name: Build + Push Image
