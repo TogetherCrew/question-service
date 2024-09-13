@@ -6,8 +6,8 @@ app = FastAPI()
 pipe = pipeline("text-classification", model="shahrukhx01/question-vs-statement-classifier")
 
 custom_labels = {
-    "LABEL_0": "statement",
-    "LABEL_1": "question"
+    "LABEL_0": "STATEMENT",
+    "LABEL_1": "QUESTION"
 }
 
 class Payload(BaseModel):
