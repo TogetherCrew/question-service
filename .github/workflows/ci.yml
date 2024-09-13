@@ -40,7 +40,7 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: pytest
+          coverageCommand: coverage run -m pytest
 
   build-push:
     name: Build + Push Image
