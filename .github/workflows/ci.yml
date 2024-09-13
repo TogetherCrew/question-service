@@ -40,7 +40,8 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: coverage run -m pytest app
+          coverageCommand: coverage lcov # run -m pytest app
+          coverageLocations: ${{github.workspace}}/*.lcov:lcov
 
   build-push:
     name: Build + Push Image
