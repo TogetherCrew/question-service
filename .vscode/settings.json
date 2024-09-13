@@ -3,5 +3,22 @@
     "."
   ],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    }
+  },
+  "black-formatter.args": [
+    "--line-length",
+    "88"
+  ],
+  "flake8.args": [
+    "--max-line-length",
+    "88",
+    "--extend-ignore",
+    "E203"
+  ]
 }
