@@ -28,13 +28,16 @@ class Payload(BaseModel):
 
 @app.post("/test")
 async def test(payload: Payload, request: Request):
+    print(payload)
     response_q = asyncio.Queue()
     await request.app.model_queue.put((payload.text, response_q))
     output = await response_q.get()
+    print(output)
     result = output[0]
 
     # Customize the label
     result["label"] = custom_labels.get(result["label"], result["label"])
+    print(result)
     return result
 
 
